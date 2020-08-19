@@ -10,9 +10,11 @@
       <el-container>
         <el-aside :width="isshow? '65px':'200px'">
             <div class="toggle-bar" @click="isshow=!isshow" :style="{width:isshow? '65px':'200px'}">|||</div>
-            <el-menu background-color="#333744" text-color="#ffff" active-text-color="#409eff" :unique-opened="true" :collapse-transition="false" :collapse="isshow">
+            <el-menu background-color="#333744" text-color="#ffff" active-text-color="#409eff" :unique-opened="true" :collapse-transition="false" :collapse="isshow"
+            :router="true"
+            >
               <el-submenu
-              :index="item.id"
+              :index="item.id+''"
               :style="{width:isshow? '65px':'200px'}"
               v-for=" (item, k) in menuList "
               :key="item.id"
@@ -22,7 +24,7 @@
                   <span slot="title">{{ item.authName }}</span>
                 </template>
                 <el-menu-item
-                :index="item.id+'-'+item2.id"
+                :index="item2.path"
                 v-for=" item2 in item.children "
                 :key="item2.id">
                 <i class="el-icon-menu"></i>

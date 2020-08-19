@@ -2,6 +2,7 @@ html,body,#app{
     height: 100%;
     margin: 0;
     padding: 0;
+    min-width: 1024px;
 }
 
 
@@ -11,4 +12,15 @@ html,body,#app{
 }
 i.iconfont {
     margin-right: 10px;
+}
+
+/* 给页面的card卡片区设置样式 */
+.box-card {
+    margin-top: 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+}
+/* 给表格设置样式 */
+.el-table, .el-pagination {
+    margin-top: 15px;
+    font-size: 12px;
 }
